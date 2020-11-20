@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   	@tasks = current_user.tasks.order(created_at: :desc)
     #@task = Task.where(user_id: current_user.id)
     @q = current_user.tasks.ransack(params[:id])
-    @tasks = @q.result(distinct:true)
+    @tasks = @q.result(distinct: true).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html
