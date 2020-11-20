@@ -79,5 +79,6 @@ gem 'rails_autolink'
 gem 'ransack'
 #メール送信確認
 gem 'mailcatcher'
-
+#ページネーション
+gem 'kaminari'
 
